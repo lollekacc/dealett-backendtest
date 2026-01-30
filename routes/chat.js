@@ -15,7 +15,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Load plans ONCE
-const plansPath = path.join(__dirname, "../../Adeala2-main/data/plans.json");
+const plansPath = path.join(__dirname, "../plans.json");
 const plans = JSON.parse(fs.readFileSync(plansPath, "utf-8"));
 
 const openai = new OpenAI({
@@ -565,3 +565,4 @@ return res.status(200).json({ reply: aiText });
 });
 
 export default router;
+
