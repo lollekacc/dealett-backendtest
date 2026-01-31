@@ -10,7 +10,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Load plans.json manually
-const plansPath = path.join(__dirname, "../../Adeala2-main/data/plans.json");
+const plansPath = path.join(__dirname, "../plans.json");
 const plans = JSON.parse(fs.readFileSync(plansPath, "utf-8"));
 
 router.post("/", (req, res) => {
@@ -31,3 +31,4 @@ router.post("/", (req, res) => {
 });
 
 export default router;
+
