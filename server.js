@@ -26,15 +26,8 @@ app.use(express.json());
 app.use("/api/chat", chatRoutes);
 app.use("/api/search", searchRoutes);
 
-// Serve frontend
-app.use(express.static(path.join(__dirname, "../Adeala2-main")));
-
-// Fallback → index.html
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "../Adeala2-main/index.html"));
-});
-
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log("Server running on http://localhost:" + PORT);
 });
+
