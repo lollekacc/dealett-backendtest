@@ -314,12 +314,14 @@ if (
 if (intent.wantsPlans) {
 
   // Always allow offers if user is very explicit
-  const strongIntent =
-    intent.operator ||
-    intent.maxPrice ||
-    intent.minData ||
-    intent.wantsUnlimited ||
-    intent.isFamily;
+const strongIntent =
+  intent.operator ||
+  intent.maxPrice ||
+  intent.minData ||
+  intent.wantsUnlimited ||
+  intent.isFamily ||
+  isQuizMessage;
+
 
   // If not strong intent AND not best-answer turn → conversational reply
 if (!strongIntent && !isQuizMessage) {
@@ -565,4 +567,5 @@ return res.status(200).json({ reply: aiText });
 });
 
 export default router;
+
 
