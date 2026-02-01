@@ -262,12 +262,12 @@ if (
 // fully vague input → ask for data ONCE
 // fully vague input handling
 if (
+  intent.wantsPlans &&
   !intent.operator &&
   !intent.minData &&
   !intent.wantsUnlimited &&
   !intent.maxPrice &&
-  !intent.isFamily &&
-  !intent.wantsPlans
+  !intent.isFamily
 ) {
   // first time → ask for data
   if (!session.state.askedForData) {
@@ -567,5 +567,6 @@ return res.status(200).json({ reply: aiText });
 });
 
 export default router;
+
 
 
