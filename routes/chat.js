@@ -567,6 +567,3 @@ return res.status(200).json({ reply: aiText });
 });
 
 export default router;
-
-
-

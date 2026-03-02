@@ -4,12 +4,6 @@ import cors from "cors";
 import path from "path";
 import { fileURLToPath } from "url";
 
-
-import chatRoutes from "./routes/chat.js";
-import searchRoutes from "./routes/search.js";
-
-
-
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -22,12 +16,7 @@ app.use((req, res, next) => {
 app.use(cors());
 app.use(express.json());
 
-// API routes
-app.use("/api/chat", chatRoutes);
-app.use("/api/search", searchRoutes);
-
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log("Server running on http://localhost:" + PORT);
 });
-
